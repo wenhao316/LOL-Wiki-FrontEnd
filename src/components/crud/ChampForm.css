@@ -1,7 +1,51 @@
-.champForm {
+.champForm, .champs {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     display: flex;
 }
 
-/* .champForm button {
+.table-champ-form, .buttons-container {
+    margin: auto;
+}
 
-} */
+.td-champ-form {
+    width: 32vmin;
+    padding-top: 0.5vmin;
+    padding-bottom: 0.5vmin;
+    text-align: left;
+}
+
+.text-input {
+    width: 65vmin;
+    height: 7vmin;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    border: 2px solid #ccc;
+}
+
+.textarea-input {
+    text-align: start;
+    width: 65vmin;
+    height: 30vh;
+    padding: 12px 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+    white-space: pre-wrap;
+}
+
+
+.button-champ-form {
+    width: 20vmin;
+    height: 7vmin;
+    margin-top: 2vmin;
+    margin-bottom: 2vmin;
+    margin-left: 7vmin;
+    margin-right: 7vmin;
+    border-radius: 12px;
+    font-size: xx-large;
+}

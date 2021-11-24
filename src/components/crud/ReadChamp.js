@@ -60,14 +60,20 @@ function ReadChamp()
 
     return (
         <div className='champs'>
-            <div className='championSearch'> Champion Name
-                <input className='championInput'
-                    type="text"
-                    value={enteredName}
-                    onChange={NameChangeHandler}
-                />
-                <button onClick={handleSearch} className='searchButton'>Read</button>
-            </div>
+            <table className='table-champ-form'>
+                <tr className='tr-champ-form'>
+                    <td className='td-champ-form'>Champion Name</td>
+                    <td className='td-champ-form'>
+                        <input
+                            className='text-input'
+                            type="text"
+                            value={enteredName}
+                            onChange={NameChangeHandler}
+                        />
+                    </td>
+                </tr>
+            </table>
+            <button className='button-champ-form' onClick={handleSearch}>Read</button>
             {getDetails}
         </div>
     )

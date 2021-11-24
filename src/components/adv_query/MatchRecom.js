@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import { useState } from 'react';
+import './match.css';
 
 function MatchRecom()
 {
@@ -14,7 +15,7 @@ function MatchRecom()
 
     const handleSearch = () =>
     {
-        let a = 'http://bcfb-206-221-147-133.ngrok.io'
+        let a = 'http://127.0.0.1:5000'
         console.log(data)
         axios
             .get(a + `/matchup/recommendation?Position_Name=${position}&c1_ID=${enteredId}&c2_ID=${enteredId1}&c3_ID=${enteredId2}&c4_ID=${enteredId3}`)
@@ -54,10 +55,10 @@ function MatchRecom()
 
     //  Set Display Info from Get
     const getDetails = data === null ? null : Object.keys(data).length === 0 ?
-        <div> Champion Match Up Not Found</div>
+        <div className='result'> Champion Match Up Not Found</div>
         :
         (
-            <div>
+            <div className='result'>
                 {data.map((tmp) => (
                     <div key={tmp.Champion_ID}>
                         <div> Name: {tmp.Name}</div>
@@ -78,47 +79,65 @@ function MatchRecom()
     return (
         <div className='champs'>
             <div className='championSearch'>
-                <div>
-                    <div>Enter Position
-                        <input className='championInput'
-                            type="text"
-                            value={position}
-                            onChange={PositionHandler}
-                        />
-                    </div>
+                <table className='table-match-recom'>
+                    <tr className='tr-match-recom'>
+                        <td className='td-match-recom'>Enter Position</td>
+                        <td className='td-match-recom'>
+                            <input className='championInput'
+                                type="text"
+                                value={position}
+                                onChange={PositionHandler}
+                            />
+                        </td>
+                    </tr>
 
-                    <div>Teammate No.1
-                        <input className='championInput'
-                            type="text"
-                            value={enteredId}
-                            onChange={IdChangeHandler}
-                        />
-                    </div>
-                    <div>Teammate NO.2
-                        <input className='championInput'
-                            type="text"
-                            value={enteredId1}
-                            onChange={IdChangeHandler1}
-                        />
-                    </div>
-                    <div>Teammate  NO.3
-                        <input className='championInput'
-                            type="text"
-                            value={enteredId2}
-                            onChange={IdChangeHandler2}
-                        />
-                    </div>
-                    <div>Teammate  NO.4
-                        <input className='championInput'
-                            type="text"
-                            value={enteredId3}
-                            onChange={IdChangeHandler3}
-                        />
-                    </div>
-                </div>
-                <button onClick={handleSearch} className='searchButton'>Get WinRate</button>
+                    <tr className='tr-match-recom'>
+                        <td className='td-match-recom'>Teammate No.1</td>
+                        <td className='td-match-recom'>
+                            <input className='championInput'
+                                type="text"
+                                value={enteredId}
+                                onChange={IdChangeHandler}
+                            />
+                        </td>
+                    </tr>
+
+                    <tr className='tr-match-recom'>
+                        <td className='td-match-recom'>Teammate NO.2</td>
+                        <td className='td-match-recom'>
+                            <input className='championInput'
+                                type="text"
+                                value={enteredId1}
+                                onChange={IdChangeHandler1}
+                            />
+                        </td>
+                    </tr>
+
+                    <tr className='tr-match-recom'>
+                        <td className='td-match-recom'>Teammate  NO.3</td>
+                        <td className='td-match-recom'>
+                            <input className='championInput'
+                                type="text"
+                                value={enteredId2}
+                                onChange={IdChangeHandler2}
+                            />
+                        </td>
+                    </tr>
+
+                    <tr className='tr-match-recom'>
+                        <td className='td-match-recom'>Teammate  NO.4</td>
+                        <td className='td-match-recom'>
+                            <input className='championInput'
+                                type="text"
+                                value={enteredId3}
+                                onChange={IdChangeHandler3}
+                            />
+                        </td>
+                    </tr>
+                </table>
+                <button onClick={handleSearch} className='searchButton'>Get Recommendation</button>
             </div>
-            <div> You Need: {needs}</div>
+            <div className='you-need'> You Need: {needs}</div>
             {getDetails}
         </div>
     )

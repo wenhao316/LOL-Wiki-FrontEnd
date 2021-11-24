@@ -30,13 +30,21 @@ function DeleteChamp()
     };
 
     return (
-        <div> Champion ID
-            <input className='championInput'
-                type="text"
-                value={enteredName}
-                onChange={NameChangeHandler}
-            />
-            <button onClick={handleDelete} >Delete</button>
+        <div className='champs'>
+            <table className='table-champ-form'>
+                <tr className='tr-champ-form'>
+                    <td className='td-champ-form'>Champion ID</td>
+                    <td className='td-champ-form'>
+                        <input
+                            className='text-input'
+                            type="text"
+                            value={enteredName}
+                            onChange={NameChangeHandler}
+                        />
+                    </td>
+                </tr>
+            </table>
+            <button className='button-champ-form' onClick={handleDelete} >Delete</button>
         </div>
     )
 }

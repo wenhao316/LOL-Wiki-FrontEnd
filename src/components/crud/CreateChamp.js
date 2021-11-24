@@ -125,64 +125,119 @@ function CreateChamp({ data = defaultData, onButtonClick })
 
     return (
         <div className='champForm'>
-            <div>
-                <div> Champion ID
-                    <input
-                        type="text"
-                        value={champion_Id}
-                        onChange={idChangeHandler}
-                    /></div>
-                <div> Name
-                    <input
-                        type="text"
-                        value={name}
-                        onChange={nameChangeHandler}
-                    /></div>
-                <div> Class
-                    <input
-                        type="text"
-                        value={champ_Class}
-                        onChange={classChangeHandler}
-                    /></div>
-                <div> Resource
-                    <input
-                        type="text"
-                        value={resource}
-                        onChange={resrouceChangeHandler}
-                    /></div>
-                <div> Range Type
-                    <input
-                        type="text"
-                        value={range_type}
-                        onChange={rangeTypeChangeHandler}
-                    /></div>
-                <div> Region
-                    <input
-                        type="text"
-                        value={region}
-                        onChange={regionChangeHandler}
-                    /></div>
-                <div> Adaptive Type
-                    <input
-                        type="text"
-                        value={adaptive_type}
-                        onChange={adaptiveTypeChangeHandler}
-                    /></div>
-                <div> Background Story
-                    <input
-                        type="text"
-                        value={backgroun_Story}
-                        onChange={storyChangeHandler}
-                    /></div>
-                <div> Image URL
-                    <input
-                        type="text"
-                        value={imageUrl}
-                        onChange={imageUrlChangeHandler}
-                    /></div>
+            <table className='table-champ-form'>
+                <tr className='tr-champ-form'>
+                    <td className='td-champ-form'>Champion ID</td>
+                    <td className='td-champ-form'>
+                        <input
+                            className='text-input'
+                            type="text"
+                            value={champion_Id}
+                            onChange={idChangeHandler}
+                        />
+                    </td>
+                </tr>
+
+                <tr className='tr-champ-form'>
+                    <td className='td-champ-form'>Name</td>
+                    <td className='td-champ-form'>
+                        <input
+                            className='text-input'
+                            type="text"
+                            value={name}
+                            onChange={nameChangeHandler}
+                        />
+                    </td>
+                </tr>
+
+                <tr className='tr-champ-form'>
+                    <td className='td-champ-form'>Class</td>
+                    <td className='td-champ-form'>
+                        <input
+                            className='text-input'
+                            type="text"
+                            value={champ_Class}
+                            onChange={classChangeHandler}
+                        />
+                    </td>
+                </tr>
+
+                <tr className='tr-champ-form'>
+                    <td className='td-champ-form'>Resource</td>
+                    <td className='td-champ-form'>
+                        <input
+                            className='text-input'
+                            type="text"
+                            value={resource}
+                            onChange={resrouceChangeHandler}
+                        />
+                    </td>
+                </tr>
+
+                <tr className='tr-champ-form'>
+                    <td className='td-champ-form'>Range Type</td>
+                    <td className='td-champ-form'>
+                        <input
+                            className='text-input'
+                            type="text"
+                            value={range_type}
+                            onChange={rangeTypeChangeHandler}
+                        />
+                    </td>
+                </tr>
+
+                <tr className='tr-champ-form'>
+                    <td className='td-champ-form'>Region</td>
+                    <td className='td-champ-form'>
+                        <input
+                            className='text-input'
+                            type="text"
+                            value={region}
+                            onChange={regionChangeHandler}
+                        />
+                    </td>
+                </tr>
+
+                <tr className='tr-champ-form'>
+                    <td className='td-champ-form'>Adaptive Type</td>
+                    <td className='td-champ-form'>
+                        <input
+                            className='text-input'
+                            type="text"
+                            value={adaptive_type}
+                            onChange={adaptiveTypeChangeHandler}
+                        />
+                    </td>
+                </tr>
+
+                <tr className='tr-champ-form'>
+                    <td className='td-champ-form'>Image URL</td>
+                    <td className='td-champ-form'>
+                        <input
+                            className='text-input'
+                            type="text"
+                            value={imageUrl}
+                            onChange={imageUrlChangeHandler}
+                        />
+                    </td>
+                </tr>
+
+                <tr className='tr-champ-form'>
+                    <td className='td-champ-form'>Background Story</td>
+                    <td className='td-champ-form'>
+                        <textarea
+                            className='textarea-input'
+                            type="text"
+                            value={backgroun_Story}
+                            onChange={storyChangeHandler}
+                        />
+                    </td>
+                </tr>
+            </table>
+            <div className='buttons-container'>
+                <button className='button-champ-form' onClick={handleCreateClick}>Create</button>
+                <button className='button-champ-form' onClick={handlePutClick}>Update</button>
             </div>
-            <button onClick={handleCreateClick}>Create</button>
-            <button onClick={handlePutClick}>Update</button>
         </div>
 
     )

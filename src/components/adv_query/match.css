@@ -1,0 +1,36 @@
+.championSearch, .result {
+  justify-content: center;
+  align-items: center;
+  padding-top: 3vmin;
+  text-align: center;
+  flex-direction: column;
+}
+
+.td-match-against, .td-match-recom {
+  width: 38vmin;
+  padding-top: 0.5vmin;
+  padding-bottom: 0.5vmin;
+  text-align: left;
+}
+
+.championInput {
+  width: 65vmin;
+  height: 7vmin;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  border: 2px solid #ccc;
+}
+
+.searchButton {
+  width: 40vmin;
+  height: 8vmin;
+  margin: 2vmin;
+  border-radius: 12px;
+  font-size: xx-large;
+}
+
+.you-need {
+  text-align: center;
+}
