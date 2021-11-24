@@ -1,0 +1,18 @@
+.list-container {
+    margin: 5vmin;
+}
+  
+.link-champion {
+    text-decoration: none;
+    color: black;
+}
+
+.item {
+    margin: 5vmin;
+    display: inline-block;
+}
+
+.champion-label {
+    font-size: 2.5vmin;
+    text-align: center;
+}

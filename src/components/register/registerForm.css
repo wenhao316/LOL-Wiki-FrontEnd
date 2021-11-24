@@ -1,0 +1,21 @@
+.form-container {
+    margin-top: 20vmin;
+    margin-bottom: 20vmin;
+    justify-content: center;
+    align-items: center;
+    display: block;
+}
+
+.table-register {
+    margin: auto;
+    table-layout: fixed;
+}
+
+.tr-register {
+    align-items: center;
+}
+
+.td-register {
+    width: 12vmin;
+    text-align: center;
+}

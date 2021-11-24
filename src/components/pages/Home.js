@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../App.css'
-import Champion from '../Champion'
+import '../../App.css';
+import Champion from '../Champion.js';
 
 // Home page
 function Home()

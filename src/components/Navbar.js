@@ -5,7 +5,7 @@ import './Navbar.css';
 
 
 // Navigation Bar
-function Navbar()
+function Navbar({user})
 {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
@@ -46,15 +46,31 @@ function Navbar()
                                 Home
                             </Link>
                         </li>
+                        {/* only display after login */}
+                        {user.userID !== '-1' ? 
+                            (
+                                <li className='nav-item'>
+                                    <Link
+                                        to='/user'
+                                        className='nav-links'
+                                        onClick={closeMobileMenu}
+                                    >
+                                        User
+                                    </Link>
+                                </li>
+                            ) : 
+                            (<></>)
+                        }
                         <li className='nav-item'>
                             <Link
-                                to='/champion'
+                                to={user.userID === '1' ? '/championUpdate' : '/championList'}
                                 className='nav-links'
                                 onClick={closeMobileMenu}
                             >
                                 Champion
                             </Link>
                         </li>
+
                         <li className='nav-item'>
                             <Link
                                 to='/matchup'
@@ -62,6 +78,16 @@ function Navbar()
                                 onClick={closeMobileMenu}
                             >
                                 MatchUp
+                            </Link>
+                        </li>
+
+                        <li className='nav-item'>
+                            <Link
+                                to='/register'
+                                className='nav-links'
+                                onClick={closeMobileMenu}
+                            >
+                                Register
                             </Link>
                         </li>
 
