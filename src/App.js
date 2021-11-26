@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MatchUp from './components/pages/MatchUp';
 import Champs from './components/pages/Champs';
-import SignUp from './components/pages/SignUp';
+import SignIn from './components/pages/SignIn';
 import RegisterForm from './components/register/RegisterForm';
 import User from './components/user/User';
 import ChampionList from './components/championList.js/ChampionList';
@@ -34,9 +34,9 @@ function App()
           <Route path='/matchup' component={MatchUp} />
           <Route path='/championUpdate' exact component={Champs} />
           <Route path='/championList' exact component={ChampionList} />
-          <Route path='/champion/:id' component={ChampionDetail} />
-          <Route path='/sign-up' component={() => (<SignUp login={login}/>)} />
-          <Route path='/register' component={RegisterForm} />
+          <Route path='/champion/:id' component={() => (<ChampionDetail user={user}/>)} />
+          <Route path='/sign-in' component={() => (<SignIn login={login}/>)} />
+          <Route path='/sign-up' component={RegisterForm} />
           <Route path='/user' component={() => (<User user={user} logout={logout}/>)} />
         </Switch>
       </Router>

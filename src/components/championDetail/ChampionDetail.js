@@ -3,11 +3,13 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './championDetail.css';
 
+const a = 'http://127.0.0.1:5000';
+
 /**
  * Details of champion
  * @returns 
  */
-function ChampionDetail() {
+function ChampionDetail({user}) {
   //get the id of the champion
   let { id } = useParams();
 
@@ -17,13 +19,11 @@ function ChampionDetail() {
   useEffect(() => {
     if (!details) {
       async function getData() {
-        let a = 'http://127.0.0.1:5000';
         axios
           .get(a + `/champion?id=${id}`)
           .then((res) =>
           {
             setDetails(res.data['Query Result'][0]);
-            console.log(res.data['Query Result']);
           })
           .catch((error) =>
           {
@@ -36,7 +36,6 @@ function ChampionDetail() {
     // if (!skillRatings) {
     //   //TODO
     //   async function getRatings() {
-    //     let a = 'http://127.0.0.1:5000';
     //     axios
     //       .get(a + `TODO`)
     //       .then((res) =>
@@ -53,12 +52,29 @@ function ChampionDetail() {
     // }
   }, [id, details, setDetails, skillRatings, setSkillRatings]);
 
+  const alertSuccess = (mess) => alert('Success: ' + mess);
+  const alertError = (mess) => alert('Error: ' + mess);
+
   const buttonHandler = () => {
     //add current champion to favourite
-    //TODO
+    axios
+      .put(a + `/user/favourite?user_id=${user.userID}&champion_id=${id}`)
+      .then((res) =>
+      {
+        if (res.data.hasOwnProperty('Response')) {
+          alertSuccess(res.data['Response']);
+        }
+        if (res.data.hasOwnProperty('Error_message')) {
+          alertError(res.data['Error_message']);
+        }
+      })
+      .catch((error) =>
+      {
+        console.log(error)
+      })
   }
 
-  if (!details) {
+  if (!details || !skillRatings) {
     return (
       <div>
         <h2>Loading</h2>
@@ -107,17 +123,17 @@ function ChampionDetail() {
       </div>
     
     
-      {/* <!-- Right Column --> */}
+      {/* Right Column */}
       <div className="champion-right-column">
     
-        {/* <!-- champion Description --> */}
+        {/* champion background story */}
         <div className="champion-description">
           <span>{details.Name}</span>
           <h1>Background Story</h1>
           <p>{details.Background_Story}</p>
         </div>
     
-        {/* <!-- champion ratings --> */}
+        {/* champion ratings */}
         <div className="champion-ratings">
     
           {/* Damage */}
@@ -151,9 +167,13 @@ function ChampionDetail() {
           </div>
         </div>
     
-        {/* <!-- champion Pricing --> */}
+        {/* button add to favourite */}
         <div className="champion-button">
-          <button className='button-add-favourite' onClick={buttonHandler}>Add To Favourite</button>
+          {user.userID !== '-1' ? 
+            (<button className='button-add-favourite' onClick={buttonHandler}>Add To Favourite</button>)
+            :
+            (<></>)
+          }
         </div>
       </div>
     </main>

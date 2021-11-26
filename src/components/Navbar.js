@@ -83,21 +83,21 @@ function Navbar({user})
 
                         <li className='nav-item'>
                             <Link
-                                to='/register'
+                                to='/sign-up'
                                 className='nav-links'
                                 onClick={closeMobileMenu}
                             >
-                                Register
+                                Sign up
                             </Link>
                         </li>
 
                         <li>
                             <Link
-                                to='/sign-up'
+                                to='/sign-in'
                                 className='nav-links-mobile'
                                 onClick={closeMobileMenu}
                             >
-                                Sign Up
+                                Sign in
                             </Link>
                         </li>
                     </ul>

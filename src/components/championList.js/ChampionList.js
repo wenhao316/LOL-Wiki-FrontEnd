@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './championList.css';
 
+const a = 'http://127.0.0.1:5000';
+
 /**
  * Display the list of champions in database
  * @returns 
@@ -13,7 +15,6 @@ function ChampionList() {
   useEffect(() => {
     if (!champions) {
       async function getData() {
-        let a = 'http://127.0.0.1:5000';
         axios
           .get(a + `/champion/image`)
           .then((res) =>
@@ -43,7 +44,7 @@ function ChampionList() {
           champions.map((champion, index) => {
             return (
               <div className='item' key={index}>
-                <Link className='link-champion' to={`/champion/${champion.Champion_ID}`} target='_blank' rel='noopener noreferrer'>
+                <Link className='link-champion' to={`/champion/${champion.Champion_ID}`}>
                   <img src={champion.Image_Url} alt=''/>
                   <div className='champion-label'>{champion.Name}</div>
                 </Link>

@@ -1,9 +1,14 @@
 .form-container {
-    margin-top: 20vmin;
-    margin-bottom: 20vmin;
+    height: 500px;
+    width: 500px;
+    margin-top: 10vmin;
+    margin-bottom: 10vmin;
+    margin-left: 35vw;
+    margin-right: 35vw;
     justify-content: center;
     align-items: center;
     display: block;
+    background-color:rgb(223, 228, 235);
 }
 
 .table-register {
@@ -17,5 +22,25 @@
 
 .td-register {
     width: 12vmin;
+    text-align: center;
+}
+
+.td-register h3 {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.input-submit {
+    margin-top: 50px;
+    width: 200px;
+    height: 30px;
+    background-color: deepskyblue;
+    color: white;
+    font-weight: 500;
+    border: 1px solid #3b5368;
+}
+
+.link-sign-up {
+    margin-top: 50px;
     text-align: center;
 }
