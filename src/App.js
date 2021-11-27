@@ -9,7 +9,7 @@ import Champs from './components/pages/Champs';
 import SignIn from './components/pages/SignIn';
 import RegisterForm from './components/register/RegisterForm';
 import User from './components/user/User';
-import ChampionList from './components/championList.js/ChampionList';
+import ChampionList from './components/championList/ChampionList';
 import ChampionDetail from './components/championDetail/ChampionDetail';
 
 function App()
