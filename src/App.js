@@ -34,7 +34,7 @@ function App()
           <Route path='/matchup' component={MatchUp} />
           <Route path='/championUpdate' exact component={Champs} />
           <Route path='/championList' exact component={ChampionList} />
-          <Route path='/champion/:id' component={() => (<ChampionDetail user={user}/>)} />
+          <Route path='/champion/:id' exact component={() => (<ChampionDetail user={user}/>)} />
           <Route path='/sign-in' component={() => (<SignIn login={login}/>)} />
           <Route path='/sign-up' component={RegisterForm} />
           <Route path='/user' component={() => (<User user={user} logout={logout}/>)} />

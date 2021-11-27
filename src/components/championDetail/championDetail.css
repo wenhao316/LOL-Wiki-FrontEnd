@@ -52,6 +52,8 @@
 .ratings-container {
   width: 100%;
   background-color: #ddd;
+  text-indent: 2vmin;
+  color: linen;
 }
 
 .Damage {
@@ -59,7 +61,7 @@
 }
 
 .Toughness {
-  background-color: sienna;
+  background-color:darkgoldenrod;
 }
 
 .Control {
@@ -83,4 +85,55 @@
   border-radius: 6px;
   font-size: 2vmin;
   background-color: rgb(250, 250, 225);
+}
+
+
+.champion-skills-container {
+  margin-left: 13vmin;
+  margin-right: 13vmin;
+  margin-top: 8vmin;
+  margin-bottom: 8vmin;
+}
+
+.skill-container span {
+  font-size: larger;
+}
+
+.skill-container div {
+  margin-bottom: 2vmin;
+  color: #43484D;
+}
+
+
+.match-up-champion-list {
+  margin: 3vmin;
+  display: flex;
+}
+
+.match-up-champion-list-label {
+  margin-top: 2vmin;
+  margin-bottom: 2vmin;
+  font-size: larger;
+  text-align: center;
+}
+
+.match-up-left-column, .match-up-right-column {
+  width: 50%;
+  margin-left: 1.5vmin;
+  margin-right: 1.5vmin;
+  text-align: center;
+}
+
+.item-counter-champion {
+  margin: 1vmin;
+  display: inline-block;
+}
+
+.item-counter-champion img {
+  width: 8vmin;
+}
+
+.counter-champion-label {
+  font-size: 1.5vmin;
+  text-align: center;
 }
