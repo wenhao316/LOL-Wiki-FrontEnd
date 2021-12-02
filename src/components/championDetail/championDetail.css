@@ -1,139 +1,139 @@
 .champion-details-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 15px;
-  display: flex;
-}
-
-.champion-left-column {
-  width: 40%;
-  position: relative;
-}
-
-.champion-left-column div {
-  margin-bottom: 10px;
-}
- 
-.champion-right-column {
-  width: 60%;
-  margin-top: 60px;
-}
-
-.champion-left-column img {
-  left: 0;
-  top: 0;
-  transition: all 0.3s ease;
-}
-
-.champion-description {
-  border-bottom: 1px solid #E1E8EE;
-  margin-bottom: 20px;
-}
-.champion-description span {
-  font-size: 12px;
-  color: #358ED7;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-.champion-description h1 {
-  font-weight: 300;
-  font-size: 52px;
-  color: #43484D;
-  letter-spacing: -2px;
-}
-.champion-description p {
-  font-size: 16px;
-  font-weight: 300;
-  color: #86939E;
-  line-height: 24px;
-}
-
-.ratings-container {
-  width: 100%;
-  background-color: #ddd;
-  text-indent: 2vmin;
-  color: linen;
-}
-
-.Damage {
-  background-color: #f44336;
-}
-
-.Toughness {
-  background-color:darkgoldenrod;
-}
-
-.Control {
-  background-color: #04AA6D;
-}
-
-.Mobility {
-  background-color: #2196F3;
-}
-
-.Utility {
-  background-color: orange;
-}
-
-.button-add-favourite {
-  width: 20vmin;
-  height: 5vmin;
-  margin-top: 5vmin;
-  margin-bottom: 5vmin;
-  border: 1px solid #86939E;
-  border-radius: 6px;
-  font-size: 2vmin;
-  background-color: rgb(250, 250, 225);
-}
-
-
-.champion-skills-container {
-  margin-left: 13vmin;
-  margin-right: 13vmin;
-  margin-top: 8vmin;
-  margin-bottom: 8vmin;
-}
-
-.skill-container span {
-  font-size: larger;
-}
-
-.skill-container div {
-  margin-bottom: 2vmin;
-  color: #43484D;
-}
-
-
-.match-up-champion-list {
-  margin: 3vmin;
-  display: flex;
-}
-
-.match-up-champion-list-label {
-  margin-top: 2vmin;
-  margin-bottom: 2vmin;
-  font-size: larger;
-  text-align: center;
-}
-
-.match-up-left-column, .match-up-right-column {
-  width: 50%;
-  margin-left: 1.5vmin;
-  margin-right: 1.5vmin;
-  text-align: center;
-}
-
-.item-counter-champion {
-  margin: 1vmin;
-  display: inline-block;
-}
-
-.item-counter-champion img {
-  width: 8vmin;
-}
-
-.counter-champion-label {
-  font-size: 1.5vmin;
-  text-align: center;
-}
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+  }
+  
+  .champion-left-column {
+    width: 40%;
+    position: relative;
+  }
+  
+  .champion-left-column div {
+    margin-bottom: 10px;
+  }
+   
+  .champion-right-column {
+    width: 60%;
+    margin-top: 60px;
+  }
+  
+  .champion-left-column img {
+    left: 0;
+    top: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .champion-description {
+    border-bottom: 1px solid #E1E8EE;
+    margin-bottom: 20px;
+  }
+  .champion-description span {
+    font-size: 12px;
+    color: #358ED7;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .champion-description h1 {
+    font-weight: 300;
+    font-size: 52px;
+    color: #43484D;
+    letter-spacing: -2px;
+  }
+  .champion-description p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #86939E;
+    line-height: 24px;
+  }
+  
+  .ratings-container {
+    width: 100%;
+    background-color: #ddd;
+    text-indent: 2vmin;
+    color: linen;
+  }
+  
+  .Damage {
+    background-color: #f44336;
+  }
+  
+  .Toughness {
+    background-color:darkgoldenrod;
+  }
+  
+  .Control {
+    background-color: #04AA6D;
+  }
+  
+  .Mobility {
+    background-color: #2196F3;
+  }
+  
+  .Utility {
+    background-color: orange;
+  }
+  
+  .button-add-favourite {
+    width: 20vmin;
+    height: 5vmin;
+    margin-top: 5vmin;
+    margin-bottom: 5vmin;
+    border: 1px solid #86939E;
+    border-radius: 6px;
+    font-size: 2vmin;
+    background-color: rgb(250, 250, 225);
+  }
+  
+  
+  .champion-skills-container {
+    margin-left: 13vmin;
+    margin-right: 13vmin;
+    margin-top: 8vmin;
+    margin-bottom: 8vmin;
+  }
+  
+  .skill-container span {
+    font-size: larger;
+  }
+  
+  .skill-container div {
+    margin-bottom: 2vmin;
+    color: #43484D;
+  }
+  
+  
+  .match-up-champion-list {
+    margin: 3vmin;
+    display: flex;
+  }
+  
+  .match-up-champion-list-label {
+    margin-top: 2vmin;
+    margin-bottom: 2vmin;
+    font-size: larger;
+    text-align: center;
+  }
+  
+  .match-up-left-column, .match-up-right-column {
+    width: 50%;
+    margin-left: 1.5vmin;
+    margin-right: 1.5vmin;
+    text-align: center;
+  }
+  
+  .item-counter-champion {
+    margin: 1vmin;
+    display: inline-block;
+  }
+  
+  .item-counter-champion img {
+    width: 8vmin;
+  }
+  
+  .counter-champion-label {
+    font-size: 1.5vmin;
+    text-align: center;
+  }

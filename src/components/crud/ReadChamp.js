@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import { useState } from 'react';
-
+import url from '../url_config';
 
 function ReadChamp()
 {
@@ -11,11 +11,9 @@ function ReadChamp()
     // GET Request
     const handleSearch = () =>
     {
-        let a = 'http://bcfb-206-221-147-133.ngrok.io'
-
         axios
             // put 信息
-            .get(a + `/champion?name=` + enteredName)
+            .get(url + `/champion?name=` + enteredName)
             .then((res) =>
             {
                 //  [][0] is undefined
@@ -42,7 +40,7 @@ function ReadChamp()
         (
             <div>
                 <div>
-                    <div ><img className='img' src={data.Image_Url} /> </div>
+                    <div ><img className='img' src={data.Image_Url} alt='' /> </div>
                     <div >Name: {data.Name}</div>
                     <div >Class: {data.Class}</div>
                     <div >Resource: {data.Resource}</div>

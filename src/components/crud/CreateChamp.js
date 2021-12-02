@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import { useState } from 'react';
 import './ChampForm.css'
+import url from '../url_config';
 
 const defaultData = {
     Champion_ID: null,
@@ -17,7 +18,6 @@ const defaultData = {
 
 function CreateChamp({ data = defaultData, onButtonClick })
 {
-    let a = 'http://bcfb-206-221-147-133.ngrok.io'
     const [name, setName] = useState(data.Name);
     const [imageUrl, setImageUrl] = useState(data.Image_Url);
     const [champion_Id, setChampion_Id] = useState(data.Champion_ID);
@@ -86,10 +86,13 @@ function CreateChamp({ data = defaultData, onButtonClick })
             Image_Url: `'${imageUrl}'`
         }
         axios
-            .post(a + `/champion?id=${champion_Id}`, newData)
+            .post(url + `champion?id=${champion_Id}`, newData)
             .then((res) =>
             {
-                console.log(res)
+                console.log(res.data)
+                if (res.data.hasOwnProperty('error_message')) {
+                    alert(res.data['error_message']);
+                }
             })
             .catch((error) =>
             {
@@ -110,10 +113,13 @@ function CreateChamp({ data = defaultData, onButtonClick })
             Image_Url: `'${imageUrl}'`
         }
         axios
-            .put(a + `/champion?id=${champion_Id}`, newData)
+            .put(url + `champion?id=${champion_Id}`, newData)
             .then((res) =>
             {
-                console.log(res)
+                console.log(res.data)
+                if (res.data.hasOwnProperty('error_message')) {
+                    alert(res.data['error_message']);
+                }
             })
             .catch((error) =>
             {

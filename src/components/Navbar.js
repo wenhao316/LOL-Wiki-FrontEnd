@@ -5,7 +5,7 @@ import './Navbar.css';
 
 
 // Navigation Bar
-function Navbar({user})
+function Navbar({ user })
 {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
@@ -47,7 +47,7 @@ function Navbar({user})
                             </Link>
                         </li>
                         {/* only display after login */}
-                        {user.userID !== '-1' ? 
+                        {user.userID !== '-1' ?
                             (
                                 <li className='nav-item'>
                                     <Link
@@ -58,7 +58,7 @@ function Navbar({user})
                                         User
                                     </Link>
                                 </li>
-                            ) : 
+                            ) :
                             (<></>)
                         }
                         <li className='nav-item'>

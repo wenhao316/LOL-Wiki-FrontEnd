@@ -1,36 +1,63 @@
 .championSearch, .result {
-  justify-content: center;
-  align-items: center;
-  padding-top: 3vmin;
-  text-align: center;
-  flex-direction: column;
-}
+    justify-content: center;
+    align-items: center;
+    padding-top: 3vmin;
+    text-align: center;
+    flex-direction: column;
+  }
+  
+  .td-match-against, .td-match-recom {
+    width: 38vmin;
+    padding-top: 0.5vmin;
+    padding-bottom: 0.5vmin;
+    text-align: left;
+  }
+  
+  .championInput {
+    width: 65vmin;
+    height: 7vmin;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    border: 2px solid #ccc;
+  }
+  
+  .searchButton {
+    width: 40vmin;
+    height: 8vmin;
+    margin: 2vmin;
+    border-radius: 12px;
+    font-size: xx-large;
+  }
+  
+  .you-need {
+    text-align: center;
+  }
 
-.td-match-against, .td-match-recom {
-  width: 38vmin;
-  padding-top: 0.5vmin;
-  padding-bottom: 0.5vmin;
-  text-align: left;
-}
+  .output-table td {
+    width: 15vw;
+    height: 8vh;
+  }
 
-.championInput {
-  width: 65vmin;
-  height: 7vmin;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  background-color: #f8f8f8;
-  border: 2px solid #ccc;
-}
+  .output-table img {
+    width: 150px;
+    margin-bottom: 5vh;
+  }
 
-.searchButton {
-  width: 40vmin;
-  height: 8vmin;
-  margin: 2vmin;
-  border-radius: 12px;
-  font-size: xx-large;
-}
+  .output-rec0 {
+    font-size: xx-large
+  }
 
-.you-need {
-  text-align: center;
-}
+  .output {
+    font-size: xx-large;
+    margin-bottom: 5vh;
+    margin-right: 10vh;
+    margin: 2vmin;
+    border-radius: 12px;
+  }
+  
+  .output-table-rec img {
+    width: 100px;
+    margin-bottom: 5vh;
+  }

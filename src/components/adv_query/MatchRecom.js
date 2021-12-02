@@ -1,24 +1,49 @@
 import React from 'react'
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './match.css';
+import url from '../url_config';
+import { Link } from 'react-router-dom';
 
-function MatchRecom()
+function MatchRecom({ champs })
 {
     const [data, setData] = useState([]);
     const [needs, setNeeds] = useState("");
-    const [position, setPosition] = useState("");
-    const [enteredId, setId] = useState("");
-    const [enteredId1, setId1] = useState("");
-    const [enteredId2, setId2] = useState("");
-    const [enteredId3, setId3] = useState("");
+    const enteredName = useRef("");
+    const enteredName1 = useRef("");
+    const enteredName2 = useRef("");
+    const enteredName3 = useRef("");
+    const fieldSelected = useRef();
 
     const handleSearch = () =>
     {
-        let a = 'http://127.0.0.1:5000'
-        console.log(data)
+
+        const field = fieldSelected.current.value;
+        let id = enteredName.current.value;
+        let id1 = enteredName1.current.value;
+        let id2 = enteredName2.current.value;
+        let id3 = enteredName3.current.value;
+        let inputName = enteredName.current.value;
+        let inputName1 = enteredName1.current.value;
+        let inputName2 = enteredName2.current.value;
+        let inputName3 = enteredName3.current.value;
+        for (let i = 0; i < champs.length; i += 1) {
+            if (champs[i]['Name'] === inputName) {
+                id = champs[i]['Champion_ID']
+            }
+            if (champs[i]['Name'] === inputName1) {
+                id1 = champs[i]['Champion_ID']
+            }
+            if (champs[i]['Name'] === inputName2) {
+                id2 = champs[i]['Champion_ID']
+            }
+            if (champs[i]['Name'] === inputName3) {
+                id3 = champs[i]['Champion_ID']
+            }
+        }
+
         axios
-            .get(a + `/matchup/recommendation?Position_Name=${position}&c1_ID=${enteredId}&c2_ID=${enteredId1}&c3_ID=${enteredId2}&c4_ID=${enteredId3}`)
+            .get(url + `/matchup/recommendation?Position_Name=${field}&c1_ID=${id}&c2_ID=${id1}&c3_ID=${id2}&c4_ID=${id3}`)
             .then((res) =>
             {
                 setData(res.data['Query Result']['recommendation']);
@@ -30,50 +55,27 @@ function MatchRecom()
             })
     };
 
-
-    const PositionHandler = (event) =>
-    {
-        setPosition(event.target.value);
-    };
-
-    const IdChangeHandler = (event) =>
-    {
-        setId(event.target.value);
-    };
-    const IdChangeHandler1 = (event) =>
-    {
-        setId1(event.target.value);
-    };
-    const IdChangeHandler2 = (event) =>
-    {
-        setId2(event.target.value);
-    };
-    const IdChangeHandler3 = (event) =>
-    {
-        setId3(event.target.value);
-    };
-
     //  Set Display Info from Get
     const getDetails = data === null ? null : Object.keys(data).length === 0 ?
         <div className='result'> Champion Match Up Not Found</div>
         :
         (
-            <div className='result'>
-                {data.map((tmp) => (
-                    <div key={tmp.Champion_ID}>
-                        <div> Name: {tmp.Name}</div>
-                        <div>Control : {tmp.Control}</div>
-                        <div>Damage : {tmp.Damage}</div>
-                        <div>Mobility : {tmp.Mobility}</div>
-                        <div>Toughness : {tmp.Toughness}</div>
-                        <div>Utility : {tmp.Utility}</div>
-                    </div>
-                ))
-                }
-                <div>
-                    <button onClick={handleSearch} />
-                </div>
-            </div >
+            < div className='result' >
+                <table className='output-table-rec'>
+                    {data.map((tmp) => (
+                        <tr className='output' key={tmp.Champion_ID}>
+                            <td><img src={tmp.Image_Url} /> </ td>
+                            <td> <Link to={`/champion/${tmp.Champion_ID}`}> {tmp.Name}</ Link></td>
+                            <td>Control : {tmp.Control} </td>
+                            <td>Damage : {tmp.Damage} </td>
+                            <td>Mobility : {tmp.Mobility} </td>
+                            <td>Toughness : {tmp.Toughness} </td>
+                            <td>Utility : {tmp.Utility} </td>
+                        </tr>
+                    ))
+                    }
+                </table>
+            </div>
         )
 
     return (
@@ -83,11 +85,13 @@ function MatchRecom()
                     <tr className='tr-match-recom'>
                         <td className='td-match-recom'>Enter Position</td>
                         <td className='td-match-recom'>
-                            <input className='championInput'
-                                type="text"
-                                value={position}
-                                onChange={PositionHandler}
-                            />
+                            <td> <select name='select-field' id='select-field' ref={fieldSelected}>
+                                <option value='Top'>Top</option>
+                                <option value='Jungle'>Jungle</option>
+                                <option value='Middle'>Middle</option>
+                                <option value='Bottom'>Bottom</option>
+                                <option value='Support'>Support</option>
+                            </select></ td>
                         </td>
                     </tr>
 
@@ -96,8 +100,7 @@ function MatchRecom()
                         <td className='td-match-recom'>
                             <input className='championInput'
                                 type="text"
-                                value={enteredId}
-                                onChange={IdChangeHandler}
+                                ref={enteredName}
                             />
                         </td>
                     </tr>
@@ -107,8 +110,7 @@ function MatchRecom()
                         <td className='td-match-recom'>
                             <input className='championInput'
                                 type="text"
-                                value={enteredId1}
-                                onChange={IdChangeHandler1}
+                                ref={enteredName1}
                             />
                         </td>
                     </tr>
@@ -118,8 +120,7 @@ function MatchRecom()
                         <td className='td-match-recom'>
                             <input className='championInput'
                                 type="text"
-                                value={enteredId2}
-                                onChange={IdChangeHandler2}
+                                ref={enteredName2}
                             />
                         </td>
                     </tr>
@@ -129,8 +130,7 @@ function MatchRecom()
                         <td className='td-match-recom'>
                             <input className='championInput'
                                 type="text"
-                                value={enteredId3}
-                                onChange={IdChangeHandler3}
+                                ref={enteredName3}
                             />
                         </td>
                     </tr>

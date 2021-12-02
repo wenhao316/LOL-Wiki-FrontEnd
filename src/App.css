@@ -15,10 +15,8 @@
   font-size: 3rem;
 }
 
-
-
-.matchup {
-  /* background-image: url('images/wallpaper.jpg'); */
+/* .matchup {
+  background-image: url('images/wallpaper.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -27,10 +25,10 @@
 }
 
 .sign-up {
-  background-image: url('images/IG.jpg');
+  background-image: url('./images/IG.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: rgb(0,0,0);
   font-size: 100px;
-}
+} */

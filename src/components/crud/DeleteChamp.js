@@ -1,19 +1,18 @@
 import React from 'react'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import url from '../url_config';
 
 
 function DeleteChamp()
 {
-    let a = 'http://bcfb-206-221-147-133.ngrok.io'
-
     const [data, setData] = useState(null)
     const [enteredName, setEnteredName] = useState("");
 
     const handleDelete = data =>
     {
         axios
-            .delete(a + `/champion?id=${enteredName}`, data)
+            .delete(url + `champion?id=${enteredName}`, data)
             .then((res) =>
             {
                 console.log(res)

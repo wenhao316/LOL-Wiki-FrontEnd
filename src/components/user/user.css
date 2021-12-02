@@ -1,0 +1,38 @@
+.title {
+    font-size:  10 vmin;
+    text-align: center;
+}
+
+.item img {
+    width: 15vh;
+}
+
+.item {
+    margin: 3vmin;
+    display: inline-block;
+}
+
+.champion-label {
+    font-size: 2.5vmin;
+    text-align: center;
+}
+
+.logoutButton {
+    width: 40vmin;
+    height: 8vmin;
+    margin: 2vmin;
+    border-radius: 12px;
+    font-size: xx-large;
+  }
+
+  .intro {
+    font-size:  20 vmin;
+    text-align: center; 
+  }
+
+  .graphs {
+    width: 50%;
+    background-color: #ddd;
+    text-indent: 2vmin;
+    color: linen;
+  }

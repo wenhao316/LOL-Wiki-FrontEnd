@@ -4,11 +4,11 @@ import MatchAgainst from "../adv_query/MatchAgainst";
 import MatchRecom from "../adv_query/MatchRecom";
 
 // Matchup Page
-export default function MatchUp()
+export default function MatchUp({ champs })
 {
     return (<div className='champs'>
-        <MatchAgainst />
-        <MatchRecom />
+        <MatchAgainst champs={champs} />
+        <MatchRecom champs={champs} />
     </div>
     )
 }
